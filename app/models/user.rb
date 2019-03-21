@@ -13,7 +13,10 @@ class User < ApplicationRecord
   # Added for Post models
   has_many :posts, dependent: :destroy
   has_many :text_posts, dependent: :destroy
-  has_many :image_posts, dependent: :destroy 
+  has_many :image_posts, dependent: :destroy
+
+  # Add for Comment model
+  has_many :comments, dependent: :destroy
 
   def following?(leader)
     leaders.include? leader
